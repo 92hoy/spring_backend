@@ -7,4 +7,5 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 mybatis:
   type-aliases-package: com.spring_backend
-  mapper-locations: mybatis/mapper/**/*.xml
+  
+  mapper-locations: com/spring_backend/dao/api/test/*.xml

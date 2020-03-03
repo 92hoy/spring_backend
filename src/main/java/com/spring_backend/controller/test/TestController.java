@@ -1,12 +1,21 @@
 package com.spring_backend.controller.test;
 
-import com.spring_backend.common.model.TestModel;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.spring_backend.common.model.TestModel;
+import com.spring_backend.service.TestService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // 여기는 컨트롤러라고 알려주는 @RestController 어노테이션 사용
 @RequestMapping("/api") // 여기로 들어올 path를 지정할 @RequestMapping 어노테이션 사용 localhost:8111/api
 public class TestController {
+
+    @Autowired
+    public TestService testService;
 
     // -----------------------------GET----------------------------------
     @RequestMapping(method = RequestMethod.GET, path = "/getRequest")   // localhost:8111/api/getRequest
@@ -39,10 +48,13 @@ public class TestController {
     }
  
     @PostMapping(value = "/postMapping")
-    public TestModel postMapping(@RequestBody TestModel testModel){
-        return testModel;
+    public Map<String,Object> postMapping(@RequestBody TestModel testModel){
+        Map<String,Object> result= new HashMap<String,Object>();
+        result = testService.testjava();
+        return result;
     }
 
+    
 
 }
 
