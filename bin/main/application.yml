@@ -1,0 +1,10 @@
+server:
+    port: 8111
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hoyoy
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  type-aliases-package: com.spring_backend
+  mapper-locations: mybatis/mapper/**/*.xml
