@@ -58,4 +58,12 @@ public class TestController {
         return result;
     }
 
+    // ------------------Test GET---------------------------
+    @GetMapping(value = "/gettest")
+    public List<HashMap<String, Object>> getMapping(@RequestBody TestModel testModel) {
+        List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
+        result = testService.testjava();
+        return result;
+    }
+
 }
