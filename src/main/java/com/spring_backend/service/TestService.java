@@ -1,5 +1,6 @@
 package com.spring_backend.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,8 +13,8 @@ public class TestService {
     @Autowired
     private TestMapper mapper;
 
-    public Map<String,Object> testjava(){
-        Map<String,Object> ret_list = new HashMap<String,Object>();
+    public List<HashMap<String,Object>> testjava(){
+        List<HashMap<String, Object>> ret_list = new ArrayList<HashMap<String, Object>>();
         ret_list = mapper.getTest();
         return ret_list;
     }

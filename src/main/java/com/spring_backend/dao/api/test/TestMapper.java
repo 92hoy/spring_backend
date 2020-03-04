@@ -12,7 +12,7 @@ public interface TestMapper {
     // public int get(Map<String, Object> map);
 
     // Map<String,Object> param = new HashMap<String,Object>();
-    public HashMap<String, Object> getTest();
+    public List<HashMap<String, Object>> getTest();
 
     // Integer param1 = 1;
     // public int getTest2(Integer param1);
