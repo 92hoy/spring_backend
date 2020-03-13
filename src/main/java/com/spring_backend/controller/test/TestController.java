@@ -42,6 +42,8 @@ public class TestController {
         return testmodel;
     }
 
+    
+
     // -----------------------------POST----------------------------------
     // http통신할때 post는 body에다 data를 집어넣어서 받아오겠다.
     // @RequestBody에 SearchVO에 있는 값을 매칭해서 보내줘라.
@@ -61,6 +63,15 @@ public class TestController {
     // ------------------Test GET---------------------------
     @GetMapping(value = "/gettest")
     public List<HashMap<String, Object>> getMapping(@RequestBody TestModel testModel) {
+        List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
+        result = testService.testjava();
+        System.out.println("----------------------------------");
+        System.out.println(result);
+        return result;
+    }
+    
+    @GetMapping("/get_list")
+    public List<HashMap<String, Object>> getList(TestModel testmodel) {
         List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
         result = testService.testjava();
         return result;
