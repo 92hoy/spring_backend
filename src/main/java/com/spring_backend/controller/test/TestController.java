@@ -6,10 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.spring_backend.common.model.TestModel;
 import com.spring_backend.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,16 +68,22 @@ public class TestController {
     public List<HashMap<String, Object>> getMapping(@RequestBody TestModel testModel) {
         List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
         result = testService.testjava();
-        System.out.println("----------------------------------");
         System.out.println(result);
         return result;
     }
     
+
     @GetMapping("/get_list")
     public List<HashMap<String, Object>> getList(TestModel testmodel) {
         List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
         result = testService.testjava();
         return result;
     }
+    // ------------------front connect---------------------------
+    @PostMapping("/ip")
+	public ResponseEntity<String> ip (HttpServletRequest request) {
+		// 요청을 보낸 클라이언트의 IP주소를 반환합니다.
+		return ResponseEntity.ok(request.getRemoteAddr());
+	}
 
 }
