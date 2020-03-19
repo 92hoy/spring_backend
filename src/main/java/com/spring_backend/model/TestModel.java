@@ -1,14 +1,13 @@
-package com.spring_backend.common.model;
+package com.spring_backend.model;
 
-public class LoginModel {
+public class TestModel {
 
 	private Integer id;
 	private String login_id;
 	private String password;
 	private String name;
 	private Integer birth;
-    private String phnumber;
-    private String role;
+	private String phnumber;
 	private String regist_date;
 	private String modify_date;
 	private String del_yn;
@@ -84,13 +83,5 @@ public class LoginModel {
 	public void setDel_yn(String del_yn) {
 		this.del_yn = del_yn;
 	}
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
 }

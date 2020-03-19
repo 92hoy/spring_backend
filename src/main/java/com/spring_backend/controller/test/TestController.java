@@ -8,7 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.spring_backend.common.model.TestModel;
+import com.spring_backend.model.TestModel;
 import com.spring_backend.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;

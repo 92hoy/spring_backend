@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.spring_backend.common.model.TestModel;
+import com.spring_backend.model.TestModel;
 import com.spring_backend.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;

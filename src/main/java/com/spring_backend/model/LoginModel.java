@@ -1,6 +1,6 @@
-package com.spring_backend.common.model;
+package com.spring_backend.model;
 
-public class UserModel {
+public class LoginModel {
 
 	private Integer id;
 	private String login_id;

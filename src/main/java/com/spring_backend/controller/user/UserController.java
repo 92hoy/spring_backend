@@ -1,6 +1,6 @@
 package com.spring_backend.controller.user;
 
-import com.spring_backend.common.model.UserModel;
+import com.spring_backend.model.UserModel;
 import com.spring_backend.service.UserService;
 
 import io.swagger.annotations.Api;
