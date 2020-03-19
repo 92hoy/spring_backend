@@ -80,9 +80,10 @@ public class TestController {
         return result;
     }
     // ------------------front connect---------------------------
-    @PostMapping("/ip")
+    @GetMapping("/ip")
 	public ResponseEntity<String> ip (HttpServletRequest request) {
-		// 요청을 보낸 클라이언트의 IP주소를 반환합니다.
+        // 요청을 보낸 클라이언트의 IP주소를 반환합니다.
+        System.out.println("========"+request.getRemoteAddr());
 		return ResponseEntity.ok(request.getRemoteAddr());
 	}
 

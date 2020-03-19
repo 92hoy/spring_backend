@@ -1,13 +1,14 @@
 package com.spring_backend.common.model;
 
-public class TestModel {
+public class UserModel {
 
 	private Integer id;
 	private String login_id;
 	private String password;
 	private String name;
 	private Integer birth;
-	private String phnumber;
+    private String phnumber;
+    private String role;
 	private String regist_date;
 	private String modify_date;
 	private String del_yn;
@@ -83,5 +84,13 @@ public class TestModel {
 	public void setDel_yn(String del_yn) {
 		this.del_yn = del_yn;
 	}
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
 }

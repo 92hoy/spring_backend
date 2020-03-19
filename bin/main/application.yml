@@ -13,4 +13,4 @@ spring:
 mybatis:
   type-aliases-package: com.spring_backend
   
-  mapper-locations: com/spring_backend/dao/api/test/*.xml
+  mapper-locations: com/spring_backend/dao/api/*/*.xml
