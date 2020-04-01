@@ -12,8 +12,12 @@ import com.spring_backend.model.TestModel;
 import com.spring_backend.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // 여기는 컨트롤러라고 알려주는 @RestController 어노테이션 사용
@@ -79,12 +83,16 @@ public class TestController {
         result = testService.testjava();
         return result;
     }
+    
     // ------------------front connect---------------------------
     @GetMapping("/ip")
 	public ResponseEntity<String> ip (HttpServletRequest request) {
         // 요청을 보낸 클라이언트의 IP주소를 반환합니다.
-        System.out.println("========"+request.getRemoteAddr());
+        System.out.println("getRequestURL = "+request.getRequestURL());
+        System.out.println("getRemoteHost = "+request.getRemoteHost());
+        System.out.println("getRemotePort = "+request.getRemotePort());
+        System.out.println("getRemoteAddr = "+request.getRemoteAddr());
 		return ResponseEntity.ok(request.getRemoteAddr());
-	}
+    }
 
 }

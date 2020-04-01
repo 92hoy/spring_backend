@@ -4,6 +4,22 @@
 
 <mapper namespace="com.spring_backend.dao.api.board.BoardMapper">
     <select id="boardList" resultType="java.util.HashMap">
-        SELECT id,title,context,regist_date FROM board;
+        SELECT id,title,context,regist_date FROM board where del_yn = 'N';
     </select>
+
+    <insert id="boardCreate" parameterType="java.util.HashMap">
+        INSERT INTO board (title, context) VALUES ( #{title},  #{context});
+    </insert>
+
+    <update id="boardDelete" parameterType="java.util.HashMap">
+        UPDATE board SET del_yn = 'Y' WHERE id in 
+            <foreach collection="del_list" item="type"  index='index' separator="," open="(" close=")">
+                ${del_list[index]}
+            </foreach>
+    </update>
+
+    <update id="boardUpdate" parameterType="java.util.HashMap">
+        UPDATE board SET title = #{title}, context = #{context} WHERE id =#{id}
+    </update>
+    
 </mapper>

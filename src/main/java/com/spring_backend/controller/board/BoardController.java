@@ -6,6 +6,7 @@ import com.spring_backend.service.BoardService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import io.swagger.models.Response;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
  
 @Api(tags = {"2.Board"})
 @RequiredArgsConstructor
@@ -30,6 +34,24 @@ public class BoardController {
         List<HashMap<String, Object>> result = new ArrayList<HashMap<String, Object>>();
         result = boardService.getboard();
         return result;
+    }
+    @ApiOperation(value = "게시글 생성", notes = "게시글 생성")
+    @PostMapping(value = "/create_board")
+    public void postList(HttpServletRequest request, BoardModel boardmodel, @RequestBody Map<String, Object> param) {
+        boardService.postboard(param);
+        // response.setData(result)
+    }
+    @ApiOperation(value = "게시글 삭제", notes = "게시글 삭제")
+    @PutMapping(value = "/delete_board")
+    public void deleteboard(HttpServletRequest request, BoardModel boardmodel, @RequestBody Map<String, Object> param) {
+        boardService.deleteboard(param);
+        // System.out.println(param);
+    }
+    @ApiOperation(value = "게시글 수정", notes = "게시글 수정")
+    @PutMapping(value = "/update_board")
+    public void updateboard(HttpServletRequest request, BoardModel boardmodel, @RequestBody Map<String, Object> param) {
+        boardService.updateboard(param);
+        // System.out.println(param);
     }
     // @ApiOperation(value = "회원 입력", notes = "회원을 입력한다.")
     // @PostMapping(value = "/user")

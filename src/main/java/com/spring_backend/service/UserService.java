@@ -17,8 +17,5 @@ public class UserService {
         List<HashMap<String, Object>> ret_list = new ArrayList<HashMap<String, Object>>();
         ret_list = mapper.getUser();
         return ret_list;
-    }
-
-    
- 
+    }    
 }
